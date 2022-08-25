@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+  
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+        .main{
+                width:100vw;
+                height:100vh;
+                background-image: url("img\\clock2.jpg"); 
+                background-size:cover;
+                background-attachment: fixed;
+                position: relative;
+                padding: 100px 600px;
+                border:10px solid white ;
+       
+    }
+   .First{
+   
+        position: absolute;
+       
+
+    }
+</style>
+<body>
+    <div class="main">
+    <div id="First">
+        <h1 id="demo"><span id="Time"></span></h1>
+        <b><var><p id="Aahil"><span id="AK">DIGITAL CLOCK</span><br>WITH CURRENT DATE<br>USING JAVASCRIPT</p></var></b><br>
+     </div>
+     </div>
+</body>
+<script>
+   setInterval(() => {
+     a=new Date();   
+     hours=a.getHours();
+     minutes=a.getMinutes();
+     seconds=a.getSeconds();
+     period="PM";
+    if(hours<12){
+        period="AM";
+    }
+    if(hours<=9){
+        hours="0"+hours;
+    }
+    if(minutes<=9){
+        minutes="0"+minutes;
+    }
+    if(seconds<=9){
+        seconds="0"+seconds;
+    }
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let date=a.toLocaleDateString(undefined,options);
+    document.getElementById("Time").innerHTML=hours+":"+minutes+":"+seconds+"  "+period+"<br>"+"  "+date;
+ }, 60);
+    let tn=document.getElementById("First");
+    tn.style.background="none";
+    tn.style.height="400px";
+    tn.style.width="500px";
+    tn.style.color="darkblack";
+    tn.style.textAlign="center";
+    tn.style.fontSize="30px";
+    tn.style.padding="15px 10px";
+    Aahil.style.color="white";
+    Aahil.style.fontSize="40px";
+    AK.style.color="red";
+</script>
+</html>
